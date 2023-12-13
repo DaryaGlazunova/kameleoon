@@ -1,0 +1,15 @@
+.dashboard {
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__search {
+    margin-bottom: 30px;
+  }
+
+  &__body:has(.no-data) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
