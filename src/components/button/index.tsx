@@ -13,7 +13,10 @@ const Button: React.FC<Props> = (props) => {
     <button
       className="button"
       onClick={(event) => onClickButton(event)}
-      style={{ backgroundColor: ButtonColor }}
+      style={{
+        backgroundColor: ButtonColor,
+        border: `1px solid ${ButtonColor}`,
+      }}
     >
       {ButtonText}
     </button>

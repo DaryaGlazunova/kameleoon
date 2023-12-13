@@ -7,7 +7,6 @@ export const fetchTests = async (
   const { search } = params;
   const apiPath = `http://localhost:3100/tests?name_like=${search}`;
   const { data } = await axios.get<Test[]>(apiPath);
-  console.log(apiPath);
   return data;
 };
 

@@ -1,3 +1,19 @@
+@mixin beforeElementStyle($color) {
+  & td:first-child {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 4px;
+      border-radius: 3px 0px 0px 3px;
+      background: $color;
+    }
+  }
+}
+
 .table {
   width: 100%;
   border-collapse: separate;
@@ -61,7 +77,19 @@
 
   &__row {
     height: 70px;
+    position: relative;
+
+    &_purple-light {
+      @include beforeElementStyle(#c2c2ff);
+    }
+    &_purple-dark {
+      @include beforeElementStyle(#8686ff);
+    }
+    &_red {
+      @include beforeElementStyle(#e14165);
+    }
   }
+
   &__cell-name {
     width: 389px;
     padding: 0 25px 0 12px;
@@ -109,27 +137,16 @@
   &__cell-buttonText {
     padding: 0 12px 0 0;
     width: 95px;
-    & .table__cell-content {
-      border-radius: 10px;
-      width: 95px;
-      height: 30px;
-      border: 1px solid #2ee5ac;
-      background: #2ee5ac;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-family: Montserrat;
-      font-size: 12px;
-      font-weight: 600;
-    }
   }
 }
 
 .image-sort-desc {
+  transform: rotate(180deg);
 }
 
-.image-sort-desc {
-  transform: rotate(180deg);
+.lowercase {
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
