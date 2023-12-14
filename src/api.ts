@@ -16,3 +16,9 @@ export const fetchSites = async (): Promise<Site[]> => {
 
   return data;
 };
+
+export const fetchTest = async (testId: string): Promise<Test> => {
+  const apiPath = `http://localhost:3100/tests/${testId}`;
+  const { data } = await axios.get<Test>(apiPath);
+  return data;
+};

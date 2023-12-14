@@ -1,0 +1,43 @@
+.Item-info {
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+  }
+
+  &__body {
+    display: flex;
+  }
+
+  &__container {
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid #000;
+  }
+
+  &__name {
+  }
+
+  &__type {
+  }
+
+  &__status {
+  }
+
+  &__back-button {
+    position: absolute;
+    bottom: 49px;
+  }
+}
+
+.subtitle {
+  color: #222;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+}

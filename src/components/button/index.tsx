@@ -1,16 +1,24 @@
 import React from "react";
 import "./_index.scss";
+import { Link } from "react-router-dom";
 
 type Props = {
   ButtonText: string;
   ButtonColor: string;
+  ButtonLink?: string;
   onClickButton: (value: any) => void;
 };
 
 const Button: React.FC<Props> = (props) => {
-  const { onClickButton, ButtonColor, ButtonText } = { ...props };
+  const {
+    onClickButton,
+    ButtonColor,
+    ButtonText,
+    ButtonLink = "",
+  } = { ...props };
   return (
-    <button
+    <Link
+      to={ButtonLink}
       className="button"
       onClick={(event) => onClickButton(event)}
       style={{
@@ -19,7 +27,7 @@ const Button: React.FC<Props> = (props) => {
       }}
     >
       {ButtonText}
-    </button>
+    </Link>
   );
 };
 

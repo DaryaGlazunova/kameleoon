@@ -30,6 +30,11 @@ const columnCellData = (
       return (
         <div className={"table__cell-content"}>
           <Button
+            ButtonLink={
+              String(row.status).toLocaleLowerCase() === "draft"
+                ? `/finalize/${row.id}`
+                : `/results/${row.id}`
+            }
             onClickButton={() => ""}
             ButtonColor={
               String(row.status).toLocaleLowerCase() === "draft"
